@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  def root
+  def select
     @amount = []
     for i in 1..10 do
       @amount = @amount.append(i)
@@ -23,13 +23,13 @@ class MainController < ApplicationController
       end
     end
     
-    if valid and params[:root]=="false"
+    if valid and params[:select]=="false"
       @idx = @listnum.each_with_index.max[1]
-      redirect_to controller: 'main', action: 'result', sub: @listsub[@idx], score: @listnum[@idx]
+      redirect_to controller: 'main', action: 'result', sub: @listsub[@idx], score: @listnum[@idx], sum: @listnum.sum
     end
   end
 
   def result
-    puts params.inspect
+    #puts params.inspect
   end
 end

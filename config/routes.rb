@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'main#root'
+  root 'main#select'
   post 'main/test'
   get 'main/result'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
